@@ -5,7 +5,7 @@ import dotenv from 'dotenv'
 import { serve } from 'inngest/express'
 import userRoutes from './routes/user.route.js'
 import ticketRoutes from './routes/ticket.route.js'
-import { inngest } from './inngest/client.js'
+import inngest from './inngest/client.js'
 import { signup } from './inngest/functions/signup.js'
 import { onTicketCreated } from './inngest/functions/ticketcreate.js'
 
