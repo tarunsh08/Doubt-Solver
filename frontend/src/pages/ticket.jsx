@@ -22,7 +22,7 @@ export default function TicketDetailsPage() {
         );
         const data = await res.json();
         if (res.ok) {
-          setTicket(data.ticket);
+          setTicket(data);
         } else {
           alert(data.message || "Failed to fetch ticket");
         }
