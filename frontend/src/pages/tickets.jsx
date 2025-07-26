@@ -60,7 +60,7 @@ export default function Tickets() {
 
   return (
     <div className="p-4 max-w-3xl mx-auto">
-      <h2 className="text-2xl font-bold mb-4">Create Ticket</h2>
+      <h2 className="text-3xl font-bold mb-4">Elaborate your Problem</h2>
 
       <form onSubmit={handleSubmit} className="space-y-3 mb-8">
         <input
@@ -68,7 +68,7 @@ export default function Tickets() {
           value={form.title}
           onChange={handleChange}
           placeholder="Ticket Title"
-          className="input input-bordered w-full"
+          className="input input-bordered w-full px-4 py-2 rounded-xl"
           required
         />
         <textarea
@@ -76,10 +76,10 @@ export default function Tickets() {
           value={form.description}
           onChange={handleChange}
           placeholder="Ticket Description"
-          className="textarea textarea-bordered w-full"
+          className="textarea textarea-bordered w-full px-4 py-2 rounded-xl"
           required
         ></textarea>
-        <button className="btn btn-primary" type="submit" disabled={loading}>
+        <button className="btn btn-primary cursor-pointer bg-fuchsia-500 px-5 py-2 rounded-xl hover:bg-fuchsia-600 transition-colors" type="submit" disabled={loading}>
           {loading ? "Submitting..." : "Submit Ticket"}
         </button>
       </form>
@@ -92,7 +92,7 @@ export default function Tickets() {
             className="card shadow-md p-4 bg-gray-800"
             to={`/tickets/${ticket._id}`}
           >
-            <h3 className="font-bold text-lg">{ticket.title}</h3>
+            <h3 className="font-bold text-xl">{ticket.title}</h3>
             <p className="text-sm">{ticket.description}</p>
             <p className="text-sm text-gray-500">
               Created At: {new Date(ticket.createdAt).toLocaleString()}

@@ -1,6 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
 import ThemeToggleButton from "./ui/theme-toggle-button"
-// import { ThemeProvider } from "@components/ui/theme-provider"
 
 export default function Navbar() {
   const token = localStorage.getItem("token");
@@ -16,35 +15,41 @@ export default function Navbar() {
     navigate("/login");
   };
   return (
-    <div className="navbar bg-base-200">
-      <ThemeToggleButton variant="gif" url="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMWI1ZmNvMGZyemhpN3VsdWp4azYzcWUxcXIzNGF0enp0eW1ybjF0ZyZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/Fa6uUw8jgJHFVS6x1t/giphy.gif" />
+    <div className="navbar bg-base-200 flex justify-between items-center gap-4 px-3 py-2">
 
-      <div className="flex-1">
-        <Link to="/" className="btn btn-ghost text-xl">
-          Ticket AI
-        </Link>
-      </div>
+<div className="flex-1">
+  <Link
+    to="/"
+    className="relative text-2xl font-extrabold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-gradient"
+  >
+    Helping Hand
+  </Link>
+</div>
+
       <div className="flex gap-2">
         {!token ? (
           <>
-            <Link to="/signup" className="btn btn-sm">
+            <Link to="/signup" className="btn btn-sm cursor-pointer hover:bg-blue-400 transition-colors">
               Signup
             </Link>
-            <Link to="/login" className="btn btn-sm">
+            <Link to="/login" className="btn btn-sm cursor-pointer hover:bg-blue-400 transition-colors">
               Login
             </Link>
           </>
         ) : (
           <>
-            <p>Hi, {user?.email}</p>
+          <div className="flex gap-4 items-center">
+            <p className="bg-gray-500 px-2 py-1 rounded-lg text-center hover:bg-gray-600 transition-colors">Hi, {user?.email}</p>
             {user && user?.role === "admin" ? (
-              <Link to="/admin" className="btn btn-sm">
+              <Link to="/admin" className="btn btn-sm cursor-pointer hover:bg-blue-400 transition-colors">
                 Admin
               </Link>
             ) : null}
-            <button onClick={logout} className="btn btn-sm">
+            <ThemeToggleButton variant="gif" url="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaHRkYXNxZG4xZnJ2ZzA2MGxrcWltdmQ0ZTVvanV4dnBrd2hqYzZudSZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/JqzFDGmh9ElmF9JDbE/giphy.gif" />
+            <button onClick={logout} className="btn btn-sm bg-red-500 px-2 py-1 rounded-xl text-center cursor-pointer hover:bg-red-400 transition-colors">
               Logout
             </button>
+            </div>
           </>
         )}
       </div>
