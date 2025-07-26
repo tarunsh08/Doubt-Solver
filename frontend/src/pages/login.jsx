@@ -40,35 +40,37 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-base-200">
-      <div className="card w-full max-w-sm shadow-xl bg-base-100">
+    <div className="min-h-screen flex items-center justify-center">
+      <div className="card w-full max-w-sm shadow-xl bg-gray-200 rounded-2xl px-5 py-4 dark:bg-gray-800">
         <form onSubmit={handleLogin} className="card-body">
-          <h2 className="card-title justify-center">Login</h2>
+          <h2 className="card-title text-center text-2xl font-bold">Login</h2>
 
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            className="input input-bordered"
-            value={form.email}
-            onChange={handleChange}
-            required
-          />
+          <div className="space-y-2 flex flex-col gap-8 mt-6">
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              className="input input-bordered rounded-xl px-5 py-2 border-2 border-gray-800 dark:border-gray-200"
+              value={form.email}
+              onChange={handleChange}
+              required
+            />
 
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            className="input input-bordered"
-            value={form.password}
-            onChange={handleChange}
-            required
-          />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              className="input input-bordered rounded-xl px-5 py-2 border-2 border-gray-800 dark:border-gray-200"
+              value={form.password}
+              onChange={handleChange}
+              required
+            />
+          </div>
 
           <div className="form-control mt-4">
             <button
               type="submit"
-              className="btn btn-primary w-full"
+              className="btn btn-primary w-full rounded-xl bg-fuchsia-500 px-5 py-2 hover:bg-fuchsia-600 transition-colors"
               disabled={loading}
             >
               {loading ? "Logging in..." : "Login"}

@@ -45,11 +45,10 @@ export default function TicketDetailsPage() {
     <div className="max-w-3xl mx-auto p-4">
       <h2 className="text-2xl font-bold mb-4">Ticket Details</h2>
 
-      <div className="card bg-gray-800 shadow p-4 space-y-4">
+      <div className="card bg-gray-200 dark:bg-gray-800 rounded-xl shadow p-4 space-y-4">
         <h3 className="text-xl font-semibold">{ticket.title}</h3>
         <p>{ticket.description}</p>
 
-        {/* Conditionally render extended details */}
         {ticket.status && (
           <>
             <div className="divider">Metadata</div>

@@ -26,13 +26,14 @@ export default function Navbar() {
   </Link>
 </div>
 
-      <div className="flex gap-2">
+      <div className="flex gap-2 items-center">
         {!token ? (
           <>
-            <Link to="/signup" className="btn btn-sm cursor-pointer hover:bg-blue-400 transition-colors">
+          <ThemeToggleButton variant="gif" url="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaHRkYXNxZG4xZnJ2ZzA2MGxrcWltdmQ0ZTVvanV4dnBrd2hqYzZudSZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/JqzFDGmh9ElmF9JDbE/giphy.gif" />
+            <Link to="/signup" className="btn btn-sm cursor-pointer bg-blue-600 px-2 py-1 rounded-xl text-center hover:bg-blue-400 transition-colors">
               Signup
             </Link>
-            <Link to="/login" className="btn btn-sm cursor-pointer hover:bg-blue-400 transition-colors">
+            <Link to="/login" className="btn btn-sm cursor-pointer bg-blue-600 px-2 py-1 rounded-xl text-center hover:bg-blue-400 transition-colors">
               Login
             </Link>
           </>

@@ -85,18 +85,20 @@ export default function Tickets() {
       </form>
 
       <h2 className="text-xl font-semibold mb-2">All Tickets</h2>
-      <div className="space-y-3">
+      <div className="space-y-3 bg-gray-200 p-4 rounded-xl dark:bg-gray-800">
         {tickets.map((ticket) => (
           <Link
             key={ticket._id}
-            className="card shadow-md p-4 bg-gray-800"
+            className="card shadow-md p-4"
             to={`/tickets/${ticket._id}`}
           >
-            <h3 className="font-bold text-xl">{ticket.title}</h3>
+            <div className="flex flex-col gap-2">
+            <h3 className="font-bold text-2xl uppercase">{ticket.title}</h3>
             <p className="text-sm">{ticket.description}</p>
             <p className="text-sm text-gray-500">
               Created At: {new Date(ticket.createdAt).toLocaleString()}
             </p>
+            </div>
           </Link>
         ))}
         {tickets.length === 0 && <p>No tickets submitted yet.</p>}
