@@ -68,7 +68,7 @@ export default function Tickets() {
           value={form.title}
           onChange={handleChange}
           placeholder="Ticket Title"
-          className="input input-bordered w-full px-4 py-2 rounded-xl"
+          className="input input-bordered border-2 border-gray-800 dark:border-gray-200 w-full px-4 py-2 rounded-xl"
           required
         />
         <textarea
@@ -76,7 +76,7 @@ export default function Tickets() {
           value={form.description}
           onChange={handleChange}
           placeholder="Ticket Description"
-          className="textarea textarea-bordered w-full px-4 py-2 rounded-xl"
+          className="textarea textarea-bordered border-2 border-gray-800 dark:border-gray-200 w-full px-4 py-2 rounded-xl"
           required
         ></textarea>
         <button className="btn btn-primary cursor-pointer bg-fuchsia-500 px-5 py-2 rounded-xl hover:bg-fuchsia-600 transition-colors" type="submit" disabled={loading}>
@@ -86,7 +86,7 @@ export default function Tickets() {
 
       <h2 className="text-xl font-semibold mb-2">All Tickets</h2>
       <div className="space-y-3 bg-gray-200 p-4 rounded-xl dark:bg-gray-800">
-        {tickets.map((ticket) => (
+        {Array.isArray(tickets) && tickets.map((ticket) => (
           <Link
             key={ticket._id}
             className="card shadow-md p-4"

@@ -42,7 +42,7 @@ export default function Navbar() {
           <div className="flex gap-4 items-center">
             <p className="bg-gray-500 px-2 py-1 rounded-lg text-center hover:bg-gray-600 transition-colors">Hi, {user?.email}</p>
             {user && user?.role === "admin" ? (
-              <Link to="/admin" className="btn btn-sm cursor-pointer hover:bg-blue-400 transition-colors">
+              <Link to="/admin" className="btn btn-sm cursor-pointer px-2 py-1 rounded-xl bg-emerald-500 hover:bg-emerald-700 transition-colors">
                 Admin
               </Link>
             ) : null}
