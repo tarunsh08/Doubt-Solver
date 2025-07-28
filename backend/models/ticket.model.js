@@ -3,8 +3,9 @@ import mongoose from 'mongoose'
 const ticketSchema = new mongoose.Schema({
     title: String,
     description: String,
-    createdBy:{type: mongoose.Schema.Types.ObjectId, ref: "User"},
-    assignedTo:{type: mongoose.Schema.Types.ObjectId, ref: "User", default: null},
+    // status: { type: String, enum: ['open', 'in_progress', 'resolved'], default: 'open' },
+    createdBy:{type: mongoose.Schema.Types.ObjectId, ref: "User", required: true},
+    assignedTo:{type: mongoose.Schema.Types.ObjectId, ref: "User"},
     priority: String,
     deadline: Date,
     helpfulNotes: String,

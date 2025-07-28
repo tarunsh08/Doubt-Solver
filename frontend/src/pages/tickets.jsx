@@ -101,7 +101,7 @@ export default function Tickets() {
             </div>
           </Link>
         ))}
-        {tickets.length === 0 && <p>No tickets submitted yet.</p>}
+        {!Array.isArray(tickets) && tickets.length === 0 && <p>No tickets submitted yet.</p>}
       </div>
     </div>
   );

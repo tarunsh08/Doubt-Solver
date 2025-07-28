@@ -43,7 +43,7 @@ export const getTickets = async (req, res) => {
         const user = req.user
         let tickets = []
         if(user.role !== "user"){
-            tickets = await Ticket.find({}).populate("assignedTo", ["email", "._id"]).sort({createdAt: -1})
+            tickets = await Ticket.find({}).populate("assignedTo", ["email", "_id"]).sort({createdAt: -1})
         }else{
             tickets = await Ticket.find({createdBy: user._id}).select("title description status createdAt").sort({createdAt: -1})
         }
@@ -63,7 +63,7 @@ export const getTicket = async (req, res) => {
         let ticket;
 
         if(user.role !== "user"){
-            ticket = await Ticket.findById(req.params.id).populate("assignedTo", ["email", "._id"])
+            ticket = await Ticket.findById(req.params.id).populate("assignedTo", ["email", "_id"])
         }else{
             ticket = await Ticket.findOne({
                 createdBy: user._id,

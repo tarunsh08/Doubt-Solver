@@ -4,8 +4,10 @@ import { auth } from "../middlewares/auth.js"
 
 const router = express.Router()
 
-router.get("/", auth, getTickets)
-router.get("/:id", auth, getTicket)
-router.post("/", auth, createTicket)
+router.use(auth)
+
+router.get("/", getTickets)
+router.get("/:id", getTicket)
+router.post("/", createTicket)
 
 export default router
