@@ -5,7 +5,7 @@ async function validateToken(token) {
   if (!token) return false;
   
   try {
-    const res = await fetch(`http://localhost:5173`, {
+    const res = await fetch(`https://doubt-solver1.onrender.com`, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${token}`
